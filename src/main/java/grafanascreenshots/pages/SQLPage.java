@@ -1,6 +1,7 @@
 package grafanascreenshots.pages;
 
 import grafanascreenshots.Screenshot;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class SQLPage {
@@ -11,7 +12,7 @@ public class SQLPage {
         this.driver = driver;
         driver.get("http://192.168.10.128:3000/d/NNMmM7HZk/sql-core?orgId=1&from=" + dateFrom + "&to=" + dateTill);
 
-        Screenshot.take(driver, "sql");
+        Screenshot.take(driver, "sql-core");
 
         new ClPage(driver, dateFrom, dateTill);
     }

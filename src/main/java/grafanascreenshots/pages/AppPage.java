@@ -12,6 +12,6 @@ public class AppPage {
         driver.get("http://192.168.10.128:3000/d/dR0O7iNWz/alfaload-app?orgId=1&from=" + dateFrom +
                         "&to=" + dateTill);
 
-        Screenshot.take(driver, "app");
+        Screenshot.take(driver, "alfaload-app");
     }
 }

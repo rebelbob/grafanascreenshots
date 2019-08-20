@@ -5,8 +5,6 @@ import org.apache.commons.cli.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -45,14 +43,17 @@ public class Main {
             e.printStackTrace();
         }
 
+        System.setProperty("webdriver.gecko.driver", "C:\\geckodriver-v0.24.0-win64\\geckodriver.exe");
+
         WebDriver driver = new FirefoxDriver();
-        driver.manage().window().fullscreen();
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.get("http://192.168.10.128:3000/login");
         new LoginPage(driver).logIn(from, till);
 
-//        exit on fullsreen F11
-//        driver.close();
+//        new LoginPage(driver).logIn("2019-08-16 12:00", "2019-08-16 16:00");
+
+        driver.close();
     }
 }

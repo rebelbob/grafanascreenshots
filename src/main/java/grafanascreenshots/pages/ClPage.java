@@ -11,8 +11,8 @@ public class ClPage {
         driver.get("http://192.168.10.128:3000/d/R9PUW7NWk/alfaload-cl?orgId=1&from=" + dateFrom +
                         "&to=" + dateTill);
 
-        Screenshot.take(driver, "cl");
+        Screenshot.take(driver, "alfaload-cl");
 
-        new AppPage(driver, "sad", "sad");
+        new AppPage(driver, dateFrom, dateTill);
     }
 }

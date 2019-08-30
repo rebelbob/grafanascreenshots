@@ -13,5 +13,7 @@ public class AppPage {
                         "&to=" + dateTill);
 
         Screenshot.take(driver, "alfaload-app");
+
+        new LMPage(driver, dateFrom, dateTill);
     }
 }

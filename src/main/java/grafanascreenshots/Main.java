@@ -5,6 +5,7 @@ import org.apache.commons.cli.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -46,7 +47,7 @@ public class Main {
         System.setProperty("webdriver.gecko.driver", "C:\\geckodriver-v0.24.0-win64\\geckodriver.exe");
 
         WebDriver driver = new FirefoxDriver();
-        driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(1920, 1080));
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.get("http://192.168.10.128:3000/login");
@@ -54,6 +55,14 @@ public class Main {
 
 //        new LoginPage(driver).logIn("2019-08-16 12:00", "2019-08-16 16:00");
 
-        driver.close();
+        driver.quit();
+
+//        try {
+//            Runtime.getRuntime().exec("taskkill /F /IM geckodriver.exe");
+//            Runtime.getRuntime().exec("taskkill /F /IM plugin-container.exe");
+//            Runtime.getRuntime().exec("taskkill /F /IM firefox.exe");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }
